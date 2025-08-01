@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,38 +6,120 @@
   <title>My Bucket List</title>
   <style>
     body {
-      font-family: sans-serif;
-      margin: 2rem;
-      background: #fdfdfd;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fefefe;
       color: #333;
     }
-    h1 { font-size: 2rem; margin-bottom: 1rem; }
-    section { margin-bottom: 2rem; }
-    .done { color: green; }
-    iframe { max-width: 100%; }
+
+    header {
+      background-color: #ff7e5f;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+      color: #444;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+    }
+
+    li.done::before {
+      content: "✔️";
+      margin-right: 0.5rem;
+      color: green;
+    }
+
+    li.todo::before {
+      content: "🕐";
+      margin-right: 0.5rem;
+      color: #999;
+    }
+
+    .media {
+      margin-top: 1rem;
+    }
+
+    .media img,
+    .media iframe {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
   </style>
 </head>
 <body>
-  <h1>🌍 My Bucket List</h1>
 
-  <section>
-    <h2>✅ Things I've Done</h2>
-    <ul>
-      <li class="done">✔️ Skydiving</li>
-      <li class="done">✔️ Visited Japan</li>
-      <li class="done">✔️ Ran a marathon</li>
-    </ul>
-    <p><strong>Video:</strong></p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-  </section>
+  <header>
+    <h1>🌍 My Bucket List</h1>
+    <p>Things I've done and things I still want to do!</p>
+  </header>
 
-  <section>
-    <h2>📝 Things I Still Want To Do</h2>
-    <ul>
-      <li>🚁 Ride in a helicopter</li>
-      <li>🐘 Go on a safari in Africa</li>
-      <li>🌌 See the Northern Lights</li>
-    </ul>
-  </section>
+  <main>
+    <section>
+      <h2>✅ Things I've Done</h2>
+      <ul>
+        <li class="done">Skydiving</li>
+        <li class="done">Visited Japan</li>
+        <li class="done">Ran a marathon</li>
+      </ul>
+
+      <div class="media">
+        <p><strong>Highlight video:</strong></p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        <img src="https://placekitten.com/600/300" alt="My adventure photo">
+      </div>
+    </section>
+
+    <section>
+      <h2>📝 Things I Still Want To Do</h2>
+      <ul>
+        <li class="todo">Ride in a helicopter</li>
+        <li class="todo">Go on a safari in Africa</li>
+        <li class="todo">See the Northern Lights</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    Built by me – just for fun 🎒
+  </footer>
+
 </body>
 </html>
+
