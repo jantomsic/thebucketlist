@@ -3,42 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Bucket List</title>
+  <title>The Bucket List</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
-      background: #fefefe;
-      color: #333;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
     }
 
     header {
-      background-color: #ff7e5f;
-      color: white;
+      background-color: #fcd5ce;
+      padding: 2rem;
       text-align: center;
-      padding: 2rem 1rem;
+      border-bottom: 2px solid black;
+    }
+
+    header img {
+      max-height: 80px;
     }
 
     header h1 {
-      margin: 0;
+      margin: 0.5rem 0 0.2rem;
       font-size: 2.5rem;
     }
 
-    main {
-      padding: 2rem;
-      max-width: 800px;
-      margin: 0 auto;
+    header p {
+      font-size: 1.1rem;
+      color: #333;
     }
 
-    section {
-      margin-bottom: 3rem;
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 80vh;
+    }
+
+    .left,
+    .right {
+      flex: 1;
+      padding: 2rem;
+      border: 2px solid black;
+    }
+
+    .left {
+      background-color: #d0f4de;
+      border-right: none;
+    }
+
+    .right {
+      background-color: #fef9c3;
+      border-left: none;
     }
 
     h2 {
-      border-bottom: 2px solid #eee;
+      text-align: center;
+      margin-top: 0;
+      font-size: 1.5rem;
+      border-bottom: 1px solid #aaa;
       padding-bottom: 0.5rem;
-      color: #444;
     }
 
     ul {
@@ -48,24 +74,12 @@
 
     li {
       padding: 0.5rem 0;
-      display: flex;
-      align-items: center;
-    }
-
-    li.done::before {
-      content: "✔️";
-      margin-right: 0.5rem;
-      color: green;
-    }
-
-    li.todo::before {
-      content: "🕐";
-      margin-right: 0.5rem;
-      color: #999;
+      border-bottom: 1px dashed #888;
     }
 
     .media {
       margin-top: 1rem;
+      text-align: center;
     }
 
     .media img,
@@ -79,47 +93,72 @@
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
-      color: #888;
+      color: #555;
+      border-top: 2px solid black;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left,
+      .right {
+        border-right: 2px solid black;
+        border-left: 2px solid black;
+      }
+
+      .left {
+        border-bottom: none;
+      }
+
+      .right {
+        border-top: none;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>🌍 My Bucket List</h1>
-    <p>Things I've done and things I still want to do!</p>
+    <!-- Optional logo (can remove or replace) -->
+    <img src="https://cdn-icons-png.flaticon.com/512/854/854894.png" alt="Bucket Logo" />
+    <h1>The Bucket List</h1>
+    <p>Everything I’ve done, and everything I’m still dreaming of 🗺️</p>
   </header>
 
-  <main>
-    <section>
-      <h2>✅ Things I've Done</h2>
+  <div class="container">
+    <div class="left">
+      <h2>✅ Completed</h2>
       <ul>
-        <li class="done">Skydiving</li>
-        <li class="done">Visited Japan</li>
-        <li class="done">Ran a marathon</li>
+        <li>Skydiving over the ocean</li>
+        <li>Backpacked through Japan</li>
+        <li>Ran a full marathon</li>
+        <li>Learned to play guitar</li>
       </ul>
 
       <div class="media">
         <p><strong>Highlight video:</strong></p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-        <img src="https://placekitten.com/600/300" alt="My adventure photo">
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+        <p><strong>Photos:</strong></p>
+        <img src="https://placekitten.com/400/250" alt="Adventure Photo">
       </div>
-    </section>
+    </div>
 
-    <section>
-      <h2>📝 Things I Still Want To Do</h2>
+    <div class="right">
+      <h2>📝 Still on the List</h2>
       <ul>
-        <li class="todo">Ride in a helicopter</li>
-        <li class="todo">Go on a safari in Africa</li>
-        <li class="todo">See the Northern Lights</li>
+        <li>Go on a safari in Kenya</li>
+        <li>See the Northern Lights</li>
+        <li>Write a book</li>
+        <li>Travel to Antarctica</li>
       </ul>
-    </section>
-  </main>
+    </div>
+  </div>
 
   <footer>
-    Built by me – just for fun 🎒
+    Made by me – because life’s short and dreams are long 🌄
   </footer>
 
 </body>
 </html>
-
